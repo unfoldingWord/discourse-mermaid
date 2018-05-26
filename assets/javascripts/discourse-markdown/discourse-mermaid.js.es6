@@ -4,7 +4,7 @@ export function setup(helper) {
    helper.whiteList(['div.mermaid']);
 
    helper.registerPlugin(md=>{
-      md.block.bbcode.ruler.push('mermaid',{
+      md.inline.bbcode.ruler.push('mermaid',{
         tag: 'mermaid',
         replace: function(state, tagInfo, content) {
           let token;
