@@ -6,12 +6,14 @@ export function setup(helper) {
    helper.registerPlugin(md=>{
       md.block.bbcode.ruler.push('mermaid',{
         tag: 'mermaid',
-        before: function(state, tagInfo) {
+        replace: function(state, tagInfo, content) {
+          let token;
+          token = state.push('code_inline', 'code', 0);
           state.push('div_open', 'div', 1);
           token.attrs = [['class', 'mermaid']];
-        },
-        after: function(state) {
+          token.content = content;
           state.push('div_close', 'div', -1);
+          return true;
         }
       });
    });
