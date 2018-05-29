@@ -4,15 +4,12 @@ export function setup(helper) {
    helper.whiteList(['div.mermaid']);
 
    helper.registerPlugin(md=>{
-      md.inline.bbcode.ruler.push('mermaid',{
+      md.block.bbcode.ruler.push('mermaid',{
         tag: 'mermaid',
         replace: function(state, tagInfo, content) {
-          let token;
-          token = state.push('code_inline', 'code', 0);
-          state.push('div_open', 'div', 1);
-          token.attrs = [['class', 'mermaid']];
-          token.content = content;
-          state.push('div_close', 'div', -1);
+          let token = state.push('html_raw', '', 0);
+	  const escaped = state.md.utils.escapeHtml(content);
+          token.content = `&lt;div class='mermaid'&gt;\n${escaped}\n&lt;/div&gt;\n`;
           return true;
         }
       });
