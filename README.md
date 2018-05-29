@@ -6,7 +6,7 @@ Adds the [Mermaid JS](https://mermaidjs.github.io/) library to discourse so that
 
 Place the following in the custom head section of your Discourse site (Settings > Customize > Themes > Default > Edit CSS/HTML):
 
-    <script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
 
 Then, install the plugin via the Docker `app.yml` configuration file.  Like this:
