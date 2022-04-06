@@ -5,7 +5,7 @@ export function setup(helper) {
     opts.features.mermaid = siteSettings.discourse_mermaid_enabled;
   });
 
-  helper.whiteList(["div.mermaid"]);
+  helper.allowList(["div.mermaid"]);
 
   helper.registerPlugin(md => {
     md.inline.bbcode.ruler.push("mermaid",{
