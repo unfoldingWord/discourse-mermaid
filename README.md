@@ -1,3 +1,6 @@
+# Archived
+This plugin is no longer active because there is a Discourse [theme component](https://meta.discourse.org/t/discourse-mermaid/218242) that provides mermaid functionality more effectively.
+
 # discourse-mermaid
 
 Adds the [Mermaid JS](https://mermaidjs.github.io/) library to discourse so that posts can make use of its features.
